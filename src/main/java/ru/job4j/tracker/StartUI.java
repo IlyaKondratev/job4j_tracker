@@ -11,5 +11,9 @@ public class StartUI {
         String requestDateTimeFormat = requestDateTime.format(formatter);
         System.out.println("Дата и время запроса: " + requestDateTimeFormat);
         System.out.println(request.toString());
+        System.out.println();
+        Tracker tracker = new Tracker();
+        tracker.add(request);
+        System.out.println(tracker.findById(1).toString());
     }
 }
