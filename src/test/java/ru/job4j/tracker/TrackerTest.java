@@ -99,7 +99,7 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenAddItem() {
+    public void whenCreateItem() {
         String[] answers = {"Fix PC"};
         Input input = new StubInput(answers);
         Tracker tracker = new Tracker();
