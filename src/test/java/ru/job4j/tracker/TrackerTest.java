@@ -103,7 +103,8 @@ public class TrackerTest {
         String[] answers = {"Fix PC"};
         Input input = new StubInput(answers);
         Tracker tracker = new Tracker();
-        StartUI.createItem(input, tracker);
+        UserAction action = new CreateAction();
+        action.execute(input, tracker);
         Item created = tracker.findAll()[0];
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
@@ -118,7 +119,9 @@ public class TrackerTest {
                 String.valueOf(item.getId()),
                 "replaced item"
         };
-        StartUI.editItem(new StubInput(answers), tracker);
+        Input input = new StubInput(answers);
+        UserAction action = new ReplaceAction();
+        action.execute(input, tracker);
         Item replaced = tracker.findById(item.getId());
         assertThat(replaced.getName(), is("replaced item"));
     }
@@ -129,7 +132,9 @@ public class TrackerTest {
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {String.valueOf(item.getId())};
-        StartUI.deleteItem(new StubInput(answers), tracker);
+        Input input = new StubInput(answers);
+        UserAction action = new DeleteAction();
+        action.execute(input, tracker);
         Item deleted = tracker.findById(item.getId());
         assertThat(deleted, is(nullValue()));
     }
