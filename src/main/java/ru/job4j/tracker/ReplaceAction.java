@@ -9,7 +9,7 @@ public class ReplaceAction implements UserAction {
 
     @Override
     public String name() {
-        return "=== Replace an item ====";
+        return "=== Replace an item ===";
     }
 
     @Override
@@ -18,9 +18,9 @@ public class ReplaceAction implements UserAction {
         String name = input.askStr("Please enter a new name: ");
         Item newItem = new Item(name);
         if (tracker.replace(id, newItem)) {
-            out.println("=== The item has been replaced ====");
+            out.println("=== The item has been replaced ===");
         } else {
-            out.println("=== An item with id " + "\"" + id + "\"" + " hasn't been found ====");
+            out.println("=== An item with id " + "\"" + id + "\"" + " hasn't been found ===");
         }
         out.println("");
         return true;

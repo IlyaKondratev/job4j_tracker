@@ -9,7 +9,7 @@ public class PrintAction implements UserAction {
 
     @Override
     public String name() {
-        return "=== Print all the items ====";
+        return "=== Print all the items ===";
     }
 
     @Override

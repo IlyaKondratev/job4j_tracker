@@ -9,7 +9,7 @@ public class FindByIdAction implements UserAction {
 
     @Override
     public String name() {
-        return "=== Find an item by id ====";
+        return "=== Find an item by id ===";
     }
 
     @Override
@@ -20,7 +20,7 @@ public class FindByIdAction implements UserAction {
             out.println("The item:");
             out.println(item.toString());
         } else {
-            out.println("=== An item with the id " + "\"" + id + "\"" + " hasn't been found ====");
+            out.println("=== An item with the id " + "\"" + id + "\"" + " hasn't been found ===");
         }
         out.println("");
         return true;
