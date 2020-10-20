@@ -111,7 +111,7 @@ public class StartUITest {
                 new String[] {"0", "1"}
         );
         Tracker tracker = new Tracker();
-        tracker.add(new Item("Item name"));
+        Item item = tracker.add(new Item("Item name"));
         UserAction[] actions = {
                 new PrintAction(out),
                 new ExitAction(out)
@@ -121,7 +121,7 @@ public class StartUITest {
                 "Menu." + System.lineSeparator() +
                         "0. === Print all the items ===" + System.lineSeparator() +
                         "1. === Exit ===" + System.lineSeparator() +
-                        tracker.findAll()[0].toString() + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "" + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. === Print all the items ===" + System.lineSeparator() +
@@ -136,7 +136,7 @@ public class StartUITest {
                 new String[] {"0", "1", "1"}
         );
         Tracker tracker = new Tracker();
-        tracker.add(new Item("Item name"));
+        Item item = tracker.add(new Item("Item name"));
         UserAction[] actions = {
                 new FindByIdAction(out),
                 new ExitAction(out)
@@ -147,7 +147,7 @@ public class StartUITest {
                         "0. === Find an item by id ===" + System.lineSeparator() +
                         "1. === Exit ===" + System.lineSeparator() +
                         "The item:" + System.lineSeparator() +
-                        tracker.findAll()[0].toString() + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "" + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. === Find an item by id ===" + System.lineSeparator() +
@@ -162,8 +162,7 @@ public class StartUITest {
                 new String[] {"0", "Item name", "1"}
         );
         Tracker tracker = new Tracker();
-        Item item = new Item("Item name");
-        tracker.add(item);
+        Item item = tracker.add(new Item("Item name"));
         UserAction[] actions = {
                 new FindByNameAction(out),
                 new ExitAction(out)
@@ -174,7 +173,7 @@ public class StartUITest {
                         "0. === Find items by name ===" + System.lineSeparator() +
                         "1. === Exit ===" + System.lineSeparator() +
                         "The items with the name " + "\"" + item.getName() + "\"" + ":" + System.lineSeparator() +
-                        tracker.findAll()[0].toString() + System.lineSeparator() +
+                        item + System.lineSeparator() +
                         "" + System.lineSeparator() +
                         "Menu." + System.lineSeparator() +
                         "0. === Find items by name ===" + System.lineSeparator() +
