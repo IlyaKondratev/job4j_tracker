@@ -1,6 +1,10 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -28,10 +32,10 @@ public class TrackerTest {
         Item item3 = new Item();
         item3.setName("test1");
         tracker.add(item3);
-        Item[] result = tracker.findByName(item1.getName());
-        Item[] expected = new Item[2];
-        expected[0] = item1;
-        expected[1] = item3;
+        List<Item> result = tracker.findByName(item1.getName());
+        List<Item> expected = new ArrayList<>();
+        expected.add(item1);
+        expected.add(item3);
         assertThat(result, is(expected));
     }
 
@@ -47,11 +51,11 @@ public class TrackerTest {
         Item item3 = new Item();
         item3.setName("test3");
         tracker.add(item3);
-        Item[] result = tracker.findAll();
-        Item[] expected = new Item[3];
-        expected[0] = item1;
-        expected[1] = item2;
-        expected[2] = item3;
+        List<Item> result = tracker.findAll();
+        List<Item> expected = new ArrayList<>();
+        expected.add(item1);
+        expected.add(item2);
+        expected.add(item3);
         assertThat(result, is(expected));
     }
 
@@ -92,9 +96,9 @@ public class TrackerTest {
         item3.setName("test3");
         tracker.add(item3);
         tracker.delete(item2.getId());
-        Item[] expected = new Item[2];
-        expected[0] = item1;
-        expected[1] = item3;
+        List<Item> expected = new ArrayList<>();
+        expected.add(item1);
+        expected.add(item3);
         assertThat(tracker.findAll(), is(expected));
     }
 
@@ -106,7 +110,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         UserAction action = new CreateAction(output);
         action.execute(input, tracker);
-        Item created = tracker.findAll()[0];
+        Item created = tracker.findAll().get(0);
         Item expected = new Item("Fix PC");
         assertThat(created.getName(), is(expected.getName()));
     }
