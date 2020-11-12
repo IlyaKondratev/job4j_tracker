@@ -48,7 +48,7 @@ public class Tracker {
         boolean rslDel = (indexRep != -1);
         if (rslDel) {
             item.setId(id);
-            items.add(indexRep, item);
+            items.set(indexRep, item);
         }
         return rslDel;
     }

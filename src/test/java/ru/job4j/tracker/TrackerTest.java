@@ -130,6 +130,8 @@ public class TrackerTest {
         action.execute(input, tracker);
         Item replaced = tracker.findById(item.getId());
         assertThat(replaced.getName(), is("replaced item"));
+        List<Item> testNewItem = tracker.findByName(item.getName());
+        assertThat(testNewItem.isEmpty(), is(true));
     }
 
     @Test
