@@ -1,4 +1,4 @@
-package collection.bank;
+package ru.job4j.tracker;
 
 import org.junit.Test;
 import ru.job4j.tracker.Item;
@@ -22,13 +22,17 @@ public class SortByIdItemTest {
         list.add(new Item(1, "one"));
         list.add(new Item(3, "three"));
         list.sort(new SortByIdItem());
-        for (int i = 0; i < list.size(); i++) {
-            assertThat(list.get(i).getId(), is(i + 1));
-        }
+        assertThat(list, is(List.of(new Item(1, "one"),
+                                    new Item(2, "two"),
+                                    new Item(3, "three"),
+                                    new Item(4, "four"),
+                                    new Item(5, "five"))));
         list.sort(new SortByIdItem().reversed());
-        for (int i = 0; i < list.size(); i++) {
-            assertThat(list.get(i).getId(), is(list.size() - i));
-        }
+        assertThat(list, is(List.of(new Item(5, "five"),
+                                    new Item(4, "four"),
+                                    new Item(3, "three"),
+                                    new Item(2, "two"),
+                                    new Item(1, "one"))));
     }
 
     @Test
@@ -40,8 +44,10 @@ public class SortByIdItemTest {
         list.add(new Item(1, "one"));
         list.add(new Item(3, "three"));
         list.sort(new SortByIdItemReversed());
-        for (int i = 0; i < list.size(); i++) {
-            assertThat(list.get(i).getId(), is(list.size() - i));
-        }
+        assertThat(list, is(List.of(new Item(5, "five"),
+                                    new Item(4, "four"),
+                                    new Item(3, "three"),
+                                    new Item(2, "two"),
+                                    new Item(1, "one"))));
     }
 }
