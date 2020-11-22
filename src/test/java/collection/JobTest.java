@@ -49,7 +49,8 @@ public class JobTest {
 
     @Test
     public void whenCompatorByNameAndPrority() {
-        Comparator<Job> cmpNamePriority = new JobSortByName().thenComparing(new JobSortByPriority());
+        Comparator<Job> cmpNamePriority = new JobSortByName().thenComparing(
+                                                                new JobSortByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -64,7 +65,8 @@ public class JobTest {
 
     @Test
     public void whenCompatorByNameRevAndPrority() {
-        Comparator<Job> cmpNameRevPriority = new JobSortByNameRev().thenComparing(new JobSortByPriority());
+        Comparator<Job> cmpNameRevPriority = new JobSortByNameRev().thenComparing(
+                                                new JobSortByPriority());
         int rsl = cmpNameRevPriority.compare(
                 new Job("Fix bug", 1),
                 new Job("Impl task", 0)
@@ -79,7 +81,8 @@ public class JobTest {
 
     @Test
     public void whenCompatorByNameAndProrityRev() {
-        Comparator<Job> cmpNamePriorityRev = new JobSortByName().thenComparing(new JobSortByPriorityRev());
+        Comparator<Job> cmpNamePriorityRev = new JobSortByName().thenComparing(
+                                                new JobSortByPriorityRev());
         int rsl = cmpNamePriorityRev.compare(
                 new Job("Impl task", 1),
                 new Job("Fix bug", 0)
@@ -94,7 +97,8 @@ public class JobTest {
 
     @Test
     public void whenCompatorByNameRebAndProrityRev() {
-        Comparator<Job> cmpNameRevPriorityRev = new JobSortByNameRev().thenComparing(new JobSortByPriorityRev());
+        Comparator<Job> cmpNameRevPriorityRev = new JobSortByNameRev().thenComparing(
+                                                    new JobSortByPriorityRev());
         int rsl = cmpNameRevPriorityRev.compare(
                 new Job("Fix bug", 1),
                 new Job("Impl task", 0)

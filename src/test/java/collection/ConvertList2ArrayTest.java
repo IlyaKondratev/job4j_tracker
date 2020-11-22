@@ -25,7 +25,7 @@ public class ConvertList2ArrayTest {
     }
 
     @Test
-    public void when7ElementsThen2_4() {
+    public void when7ElementsThen2x4() {
         int[][] result = ConvertList2Array.toArray(
                 Arrays.asList(1, 2, 3, 4, 5, 6, 7),
                 4
@@ -38,7 +38,7 @@ public class ConvertList2ArrayTest {
     }
 
     @Test
-    public void when7ElementsThen4_2() {
+    public void when7ElementsThen4x2() {
         int[][] result = ConvertList2Array.toArray(
                 Arrays.asList(1, 2, 3, 4, 5, 6, 7),
                 2
@@ -53,7 +53,7 @@ public class ConvertList2ArrayTest {
     }
 
     @Test
-    public void when7ElementsThen7_1() {
+    public void when7ElementsThen7x1() {
         int[][] result = ConvertList2Array.toArray(
                 Arrays.asList(1, 2, 3, 4, 5, 6, 7),
                 1
@@ -71,7 +71,7 @@ public class ConvertList2ArrayTest {
     }
 
     @Test
-    public void when7ElementsThen1_7() {
+    public void when7ElementsThen1x7() {
         int[][] result = ConvertList2Array.toArray(
                 Arrays.asList(1, 2, 3, 4, 5, 6, 7),
                 7

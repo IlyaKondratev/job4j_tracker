@@ -24,7 +24,8 @@ public class FindByNameAction implements UserAction {
                 out.println(i.toString());
             }
         } else {
-            out.println("=== No items with the name " + "\"" + name + "\"" + " have been found ===");
+            out.println("=== No items with the name " + "\"" + name
+                            + "\"" + " have been found ===");
         }
         out.println("");
         return true;

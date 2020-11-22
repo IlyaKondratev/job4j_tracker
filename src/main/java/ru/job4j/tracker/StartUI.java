@@ -16,7 +16,8 @@ public class StartUI {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
             if (select < 0 || select >= actions.size()) {
-                out.println("Wrong input, you can select: 0 .. " + (actions.size() - 1) + System.lineSeparator());
+                out.println("Wrong input, you can select: 0 .. "
+                                + (actions.size() - 1) + System.lineSeparator());
                 continue;
             }
             run = actions.get(select).execute(input, tracker);
@@ -29,7 +30,6 @@ public class StartUI {
             out.println(i + ". " + actions.get(i).name());
         }
     }
-
 
     public static void main(String[] args) {
         Output output = new ConsoleOutput();

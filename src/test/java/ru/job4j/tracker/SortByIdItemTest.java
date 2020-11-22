@@ -14,7 +14,7 @@ import static org.junit.Assert.assertThat;
 public class SortByIdItemTest {
 
     @Test
-    public void WhenSortByIdStraightAndReversed() {
+    public void whenSortByIdStraightAndReversed() {
         List<Item> list = new ArrayList<>(5);
         list.add(new Item(5, "five"));
         list.add(new Item(4, "four"));
@@ -36,7 +36,7 @@ public class SortByIdItemTest {
     }
 
     @Test
-    public void WhenSortByIdReversed() {
+    public void whenSortByIdReversed() {
         List<Item> list = new ArrayList<>(5);
         list.add(new Item(5, "five"));
         list.add(new Item(4, "four"));

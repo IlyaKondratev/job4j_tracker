@@ -11,7 +11,8 @@ public class Tasks {
             List<String> list = List.of("one", "two", "three", "four", "five");
             Iterator<String> iterator = list.iterator();
             while (iterator.hasNext()) {
-                System.out.println("Next element has - " + true + ", this element is " + iterator.next());
+                System.out.println("Next element has - " + true
+                                    + ", this element is " + iterator.next());
             }
             System.out.println("Next element has - " + false);
         }
@@ -83,14 +84,14 @@ public class Tasks {
         }
 
         public static void main(String[] args) {
-            System.out.println(generateAndSum(1,-1,10));
+            System.out.println(generateAndSum(1, -1, 10));
         }
     }
 
     public static class Alphabet {
         public static String reformat(String s) {
             List<String> list = new ArrayList<>(s.length());
-            list.addAll(Arrays.asList(s.split(""  )));
+            list.addAll(Arrays.asList(s.split("")));
             list.sort(Comparator.comparingInt(o -> o.charAt(0)));
             StringBuilder stringBuilder = new StringBuilder();
             for (String el : list) {
@@ -199,8 +200,12 @@ public class Tasks {
 
             @Override
             public boolean equals(Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
+                if (this == o) {
+                    return true;
+                }
+                if (o == null || getClass() != o.getClass()) {
+                    return false;
+                }
                 User user = (User) o;
                 return id == user.id;
             }
@@ -254,8 +259,12 @@ public class Tasks {
 
             @Override
             public boolean equals(Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
+                if (this == o) {
+                    return true;
+                }
+                if (o == null || getClass() != o.getClass()) {
+                    return false;
+                }
                 User user = (User) o;
                 return Objects.equals(name, user.name);
             }

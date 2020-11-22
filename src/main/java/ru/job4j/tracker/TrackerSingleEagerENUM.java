@@ -3,5 +3,10 @@ package ru.job4j.tracker;
 public enum TrackerSingleEagerENUM {
     INSTANCE;
 
-    Tracker tracker = new Tracker();
+    private Tracker tracker = new Tracker();
+
+    public Tracker getTracker() {
+        return tracker;
+    }
+    
 }
