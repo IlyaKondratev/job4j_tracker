@@ -22,17 +22,4 @@ public class LexSortTest {
         assertThat(input, is(out));
     }
 
-    @Test
-    public void sortNum1and1andDiffTasks() {
-        String[] input = {
-                "1. TaskB.",
-                "1. TaskA."
-        };
-        String[] out = {
-                "1. TaskA.",
-                "1. TaskB."
-        };
-        Arrays.sort(input, new LexSort());
-        assertThat(input, is(out));
-    }
 }
