@@ -4,7 +4,7 @@ jdk:
  - openjdk14
 
 # используем режим обычного пользователя для сборки проекта.
-sudo: false
+#sudo: false
 
 # после выполнения сборки запустить скрипт, который будет собирать статистику по JaCoCo
 # Здесь используется сторонни сервис https://codecov.io/
@@ -15,11 +15,11 @@ after_success:
 notifications:
   email:
     recipients:
-      -ilya.kondratev@phystech.edu
+      - ilya.kondratev@phystech.edu
     on_success: never # default: change
     on_failure: always # default: always
 
-#Ключ для репозитория
+# Ключ для репозитория
 env:
   global:
     - CODECOV_TOKEN="768d5814-133c-49ac-9117-be84add84170"
