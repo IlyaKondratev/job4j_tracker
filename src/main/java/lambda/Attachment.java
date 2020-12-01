@@ -1,5 +1,9 @@
 package lambda;
 
+import collection.Account;
+
+import java.util.Objects;
+
 public class Attachment {
     private String name;
     private int size;
@@ -15,6 +19,23 @@ public class Attachment {
 
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Attachment Attachment = (Attachment) o;
+        return (this.name.equals(Attachment.name)) && (this.size == Attachment.size);
     }
 
     @Override
