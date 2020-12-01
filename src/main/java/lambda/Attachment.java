@@ -34,15 +34,15 @@ public class Attachment {
         if (o == null || this.getClass() != o.getClass()) {
             return false;
         }
-        Attachment Attachment = (Attachment) o;
-        return (this.name.equals(Attachment.name)) && (this.size == Attachment.size);
+        Attachment attachment = (Attachment) o;
+        return (this.name.equals(attachment.name)) && (this.size == attachment.size);
     }
 
     @Override
     public String toString() {
-        return "{" +
-                "name='" + name + '\'' +
-                ", size=" + size +
-                '}';
+        return "{"
+                + "name='" + name + '\''
+                + ", size=" + size
+                + '}';
     }
 }

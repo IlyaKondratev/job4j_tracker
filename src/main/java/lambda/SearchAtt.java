@@ -26,7 +26,8 @@ public class SearchAtt {
         return rsl;
     }
 
-    public static List<Attachment> filterNameUn(List<Attachment> list, Predicate<String> condition) {
+    public static List<Attachment> filterNameUn(List<Attachment> list,
+                                                    Predicate<String> condition) {
         List<Attachment> rsl = new ArrayList<>();
         for (Attachment att : list) {
             if (condition.test(att.getName())) {
@@ -36,7 +37,8 @@ public class SearchAtt {
         return rsl;
     }
 
-    public static List<Attachment> filterSizeUn(List<Attachment> list, Predicate<Integer> condition) {
+    public static List<Attachment> filterSizeUn(List<Attachment> list,
+                                                    Predicate<Integer> condition) {
         List<Attachment> rsl = new ArrayList<>();
         for (Attachment att : list) {
             if (condition.test(att.getSize())) {
@@ -46,7 +48,9 @@ public class SearchAtt {
         return rsl;
     }
 
-    public static <P> List<Attachment> filter(List<Attachment> list, Predicate<P> condition, Function<Attachment, P> function) {
+    public static <P> List<Attachment> filter(List<Attachment> list,
+                                                Predicate<P> condition,
+                                                    Function<Attachment, P> function) {
         List<Attachment> rsl = new ArrayList<>();
         for (Attachment att : list) {
             if (condition.test(function.apply(att))) {
