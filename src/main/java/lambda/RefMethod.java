@@ -10,8 +10,7 @@ public class RefMethod {
                 "Ivan",
                 "Petr Arsentev"
         );
-        Consumer<String> out = RefMethod::cutOut;
-        names.forEach(out);
+        names.forEach(RefMethod::cutOut);
     }
 
     public static void cutOut(String value) {
